@@ -1,0 +1,14 @@
+class CreateSections < ActiveRecord::Migration
+  def change
+    create_table :sections do |t|
+      t.integer :page_id
+      t.string "Name"
+      t.integer "Position"
+      t.boolean "visible", :default => false
+      t.string "Content-type"
+      t.text "Content"
+      t.timestamps
+    end
+      add_index("sections", "page_id")
+  end
+end

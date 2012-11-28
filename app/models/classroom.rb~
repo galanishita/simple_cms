@@ -1,0 +1,6 @@
+class Classroom < ActiveRecord::Base
+  attr_accessible :Name, :Position
+
+	belongs_to :students, {:foreign_key => "Students_id"}
+
+end

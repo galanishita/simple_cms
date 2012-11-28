@@ -1,0 +1,12 @@
+<h2><%= @page.name %></h2>
+
+<% @page.sections.visible.sorted.each do |section| %>
+  <div class="section">
+    <% case section.contenttype
+       when 'HTML' %>
+         <%= raw(section.content) %>
+    <% when 'text' %>
+        <p><%= section.content %></p>
+    <% end %>
+  </div>
+<% end %>
