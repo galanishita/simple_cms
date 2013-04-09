@@ -1,0 +1,365 @@
+@font-face {
+	font-family: 'Kalinga';
+src:url('../../fonts/kalinga.ttf');
+src:url('../../fonts/Kalinga.otf');
+}
+@font-face {
+	font-family: 'century-gothic';
+src: url('../../fonts/gothic.ttf');
+src: url('../../fonts/gothic.otf');
+}
+
+body.blog #loading-graphic,
+body.archive  #loading-graphic,
+body.search  #loading-graphic
+{
+
+background:#fff url(images/loading.gif) no-repeat center center;
+
+
+}
+
+
+#header2{
+
+
+position:fixed;
+top:0;
+left:0;
+height:100%;
+
+width:230px;
+background-color:#0b88e4;
+
+left:-214px;
+left:-220px;
+z-index:900;
+
+-webkit-touch-callout: none;
+-webkit-user-select: none;
+-khtml-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+
+}
+
+body.menu-open #header2{
+
+left:0;
+
+}
+
+#header2 #logo{
+
+
+margin:50px auto 75px;
+
+}
+
+
+#header2 #nav li {
+
+margin:0;
+display:block;
+
+
+
+
+}
+
+#header2 #nav li a.withPlus{
+
+background:url(images/menu.png) no-repeat right 8px;
+
+}
+
+#header2 #nav li a.withMinus{
+
+background:url(images/menu.png) no-repeat right -52px;
+
+}
+
+#header2 #nav li a{
+
+font-family: century-gothic, sans-serif;
+color:#ffffff;
+font-size:16px;
+display:block;
+margin-bottom:10px;
+padding-right:14px;
+
+margin-left:24px;
+margin-right:24px;
+
+cursor:pointer;
+-webkit-transition: none;
+-moz-transition: none;
+-ms-transition: none;
+-o-transition: none;
+transition: none;
+}
+
+
+#header2 #nav li.current-menu-item a{
+
+}
+
+#header2 #nav li a:hover{
+
+
+}
+
+#header2 #nav li .sub-menu{
+
+display:block;
+margin:0;
+padding:8px 0 2px 0;
+display:none;
+
+background-color:#999;
+
+margin-bottom:6px;
+width:100%;
+}
+
+#header2 #nav li .sub-menu a{
+
+color:#fff;
+
+}
+
+#header2 select{
+
+display:none;
+
+}
+
+#header2 #copyright{
+
+color:#fff;
+position:absolute;
+left:0;
+bottom:0;
+font-size:11px;
+margin:26px;
+
+
+}
+
+#header2 #copyright p{
+
+margin:0;
+
+}
+
+#header2 #invisible-wall{
+
+height:100%;
+position:absolute;
+width:50px;
+top:0;
+right:-50px;
+background:transparent;
+
+
+}
+
+#header2 #plus-sign{
+
+width:36px;
+height:36px;
+top:50%;
+right:-15px;
+margin-top:8px;
+position:absolute;
+
+
+}
+
+body.menu-open #header2 #plus-sign{
+
+display:none;
+
+}
+
+#header2 #plus-sign .circle{
+
+position:absolute;
+left:0;
+top:0;
+width:100%;
+height:100%;
+-webkit-border-radius: 20px;
+border-radius: 20px; 
+
+}
+
+#header2 #plus-sign .icon{
+
+position:absolute;
+left:4px;
+top:0;
+width:100%;
+height:100%;
+background:url(/assets/simply_images/plus.png) no-repeat center center;
+
+
+}
+
+
+
+/* #Main page content
+================================================== */
+
+#main-wrap{
+
+position:fixed;
+position:absolute;
+
+background:#fff;
+right:0;
+
+min-height:100%;
+height:100%;
+
+width:534px;
+
+z-index:700;
+padding-bottom:60px;
+
+right:0;
+
+
+}
+
+body.page-small #main-wrap{
+
+width:80%;
+
+
+}
+
+body.page-big #main-wrap{
+
+width:760px;
+
+
+}
+
+body.page-closed.page-small #main-wrap{
+
+right:-534px;
+
+}
+
+body.page-closed.page-big #main-wrap{
+
+right:-760px;
+
+}
+
+body.page-hidden #main-wrap{
+
+display:none !important;
+
+}
+
+#main-wrap .container{
+	margin: 0 auto 0px auto;
+	width: auto;
+	padding-left: 5%;
+	padding-right: 5%;
+
+
+}
+
+
+#page-top{
+
+overflow:hidden;
+border-bottom:1px solid #efefef;
+padding:18px 28px 18px 38px;
+
+font-size:11px;
+
+}
+
+#page-top a{
+
+color:inherit;
+
+}
+
+#page-content{
+
+padding-top:50px;
+
+
+}
+
+#page-content #page-title{
+
+margin-bottom:50px;
+
+}
+
+/* #Content Wrapper
+================================================== */
+.content-wrapper{width:900px; height:auto; float:left; background:url(/assets/simply_images/wrapper-bg.jpg) right top repeat-y #FFF; padding:30px; margin-left:250px; 
+  }
+.content-wrapper p{font-family:Kalinga, Arial, Helvetica, sans-serif;
+  text-align:justify;
+  font-size:14px;
+  line-height:22px;
+  color:#333;}
+.content-wrapper .text-box{font-family:Kalinga, Arial, Helvetica, sans-serif;
+  text-align:justify;
+  font-size:14px;
+  line-height:22px;
+  color:#333;
+  background-color:#CCC;
+  width:860px;
+  padding:20px;
+  }
+.content-wrapper .imgLeft{
+	float:left; margin: 10px 10px 10px 0;
+  }
+.content-wrapper .imgRight{
+	float:right; margin: 10px 0 10px 10px;
+  }
+.content-wrapper .mTop{
+	float:right;
+  }
+.white-text{font-family:Kalinga, Arial, Helvetica, sans-serif;
+  text-align:justify;
+  font-size:14px;
+  line-height:22px;
+  color:#FFF;}
+.content-wrapper h1, h2, h3, h4{font-family:century-gothic, Arial, Helvetica, sans-serif; text-transform:uppercase;}
+.content-wrapper .boxLeft{width:430px; float:left; height:auto; position:relative; }
+.content-wrapper .boxRight{width:430px; float:right; height:auto; position:relative; }
+.boxMiddle{width:600px; height:auto; position:relative; margin-left:auto; margin-right:auto; }
+
+.content-wrapper .box01{width:290px; float:left; height:260px; position:relative; background:#CBEBFA; margin-top:10px; }
+
+.main-biography-heading{width:180px; height:180px; position:relative; margin-bottom:20px; background:url(/assets/simply_images/drop-shadow.png) bottom left no-repeat; padding-bottom:25px; padding-right:10px; margin-left:-20px; padding-left:18px;}
+.main-biography-logo{width:180px; margin-left:-35px; position:relative; margin-bottom:20px; }
+
+.heading-bg{width:auto; float:left; height:59px; }
+.heading-bg-text{width:auto; font-family:century-gothic, Arial, Helvetica, sans-serif; color:#000; background:#CCC; padding:15px 20px; font-size:16px; float:left;}
+.heading-arrow{float:left; background:url(/assets/simply_images/arrow-02.png) right top no-repeat; width:91px; height:59px; }
+.mtop100{margin-top:100px; padding-top:200px;}
+.font-size-wrapper{width:100%; height: border-bottom:1px solid #999; border-top:1px solid #999;  margin-top:100px; text-align:right; padding: 7px 0px 3px; font-size: 12px; color: rgb(153,153,153)}
+a.font-size-link:link, a.font-size-link:visited{font-size:20px; font-family:Arial, Helvetica, sans-serif; color:#999; text-decoration:none; }
+a.font-size-link:hover{color:#DC2028; }
+
+
+.division{width:880px; height:10px; background:url(/assets/simply_images/l-divider.gif);clear:both; padding-left:0px; padding-right:10px; margin:150px 0; font-size:10px; text-align:right;}
+
+
+a.heading-blink:link, a.heading-blink:visited
+{font-size:13px; color:#333; text-decoration:none; }
+a.heading-blink:hover
+{color:#000; text-decoration:underline; }
+

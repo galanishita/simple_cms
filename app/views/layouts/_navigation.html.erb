@@ -1,13 +1,84 @@
 <% subjects ||= [] %>
-<ul>
+
+<div class="subnav-item l-cell l-w4 list-format"
+            data-nav-tracking="men">
+            
+   <div class="subnav-itemheader">
+
 <% subjects.each do |subject| %>
-  <li>
-    <%= subject.name %>
-    <ul>
-    <% subject.pages.visible.sorted.each do |page| %>
-      <li><%= link_to_unless_current(page.name, :action => 'show', :id => page.permalink) %></li>
-    <% end %>
-    </ul>
-  </li>
-  <% end %>
-</ul>
+
+ 	<% if(subject.position <= 4) %>
+		<% if(subject.name == "Quotations") %>
+		<ul>
+  			<li>
+  			<% @page_title = "Quotations" %>
+			   <%= link_to(subject.name, {:action => 'quotations', :id => subject.id})%>
+     			</li>
+ 		</ul>
+		<% else %>
+		<ul>
+  			<li>
+  				   <%= link_to(subject.name, {:action => 'show', :id => subject.id}) %>
+     			</li>
+ 		</ul>
+		<% end %>
+  	<% end %>
+
+<% end %>
+ 	</div>
+ </div>
+
+<div class="subnav-item l-cell l-w4 list-format"
+            data-nav-tracking="women">
+            
+   <div class="subnav-itemheader">
+
+<% subjects.each do |subject| %>
+
+ 	<% if(subject.position > 4 && subject.position<=8) %>
+		<ul>
+  			<li>
+			 <%= link_to(subject.name, {:action => 'show', :id => subject.id})%>
+     		</li>
+ 		</ul>
+  	<% end %>
+
+<% end %>
+ 	</div>
+ </div>
+ 
+ <div class="subnav-item l-cell l-w4 list-format"
+            data-nav-tracking="kids">
+            
+   <div class="subnav-itemheader">
+
+<% subjects.each do |subject| %>
+
+ 	<% if(subject.position > 8 && subject.position<=11) %>
+		<ul>
+  			<li>
+			<%= link_to(subject.name, {:action => 'show', :id => subject.id})%>
+     		</li>
+ 		</ul>
+  	<% end %>
+
+<% end %>
+ 	</div>
+ </div>
+ <div class="subnav-item l-cell l-w4 list-format l-verticallycentered">
+            <ul>
+            <div class="latest-update" style="margin-left: 65px; margin-top: -25px;">
+            <li>latest updates</li>
+            <li>
+            <a data-subnav-label="NEW RELEASES" class="amped-item" href="#" data-nav-tracking="new releases" data-track-click="true">
+         					
+							<% @pages.images.each do |img| %>
+							
+<%= link_to ('<span class ="title">'+@pages.name+'</span>' + image_tag(img.image_url , :width => '180', :height => '90')).html_safe, {:action => 'showpages', :id => @pages.id} %>
+							<%end%>
+		        
+   			</a>
+            </li>
+           </div>
+              </ul>
+            </div>

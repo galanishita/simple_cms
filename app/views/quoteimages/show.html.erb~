@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+<center>
+  <h3>Show Auhtor Image</h3>
+<br><br>
+  <table summary="Quote detail view">
+    <tr>
+      <th>Image Name</th>
+      <td><%= @image.name %></td>
+    </tr>
+      <tr>
+      <th>Image Url</th>
+<td><embed src="<%= asset_path(@image.image_url) %>"/></td>
+
+<tr>
+      <th>Imageable ID</th>
+      <td><%= @image.quoteimageable_id %></td>
+    </tr>
+<tr>
+      <th>Imageable type</th>
+      <td><%= @image.quoteimageable_type %></td>
+    </tr>
+   <tr>
+      <th>Created at</th>
+      <td><%= @image.created_at %></td>
+    </tr>
+ 
+       <tr>
+      <th>Updated at</th>
+      <td><%= @image.updated_at %></td>
+    </tr>
+  </table>
+<br><br>
+
+<%= link_to 'Edit', edit_image_path(@image) %> |
+<%= link_to 'Back', quoteimages_path %>
+</center>

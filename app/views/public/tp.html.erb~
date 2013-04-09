@@ -1,0 +1,51 @@
+
+<style id="jsbin-css">
+
+</style>
+
+  <%= render(:partial => 'layouts/slidenav', :locals => {:subjects => @subjects}) %>
+<div id="right-side">
+<div class="side-nav-bg">
+  	<div class="main-biography-heading">
+    	
+		</div>
+<ul id="navigation">
+<li><a href="#anchor5" class="topLink" >Back to Top</a></li>
+  <li><a href="#anchor2" class="topLink">Back to Top</a></li>
+  </ul>
+</div>
+<div class="content-wrapper">
+  <div class="font-size-wrapper">
+  <a href="javascript:decreaseFontSize();" class="font-size-link">-</a> &nbsp;&nbsp; Text Size &nbsp;&nbsp;
+		<a href="javascript:increaseFontSize();" class="font-size-link">+</a>
+		</div>
+<div id="anchor5" class="page mtop100">
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+  
+<div id="anchor2" class="page mtop100">
+  <p>asfdgasdfadfLorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+  </div>
+<div style="height: 500px;"></div>
+
+</div>
+</div>
+<script>
+$('a[href*=#]').click(function() {
+ if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+ && location.hostname == this.hostname) {
+ $('ul#navigation a.active').removeClass('active');
+    
+   var $target = $(this.hash);
+   $target = $target.length && $target
+   || $('[name=' + this.hash.slice(1) +']');
+   if ($target.length) {
+  var targetOffset = $target.offset().top;
+  $('html,body')
+  .animate({scrollTop: targetOffset}, 900);
+  $(this).addClass('active');
+    return false;
+   }
+ }
+  });
+</script>

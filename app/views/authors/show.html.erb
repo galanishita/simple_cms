@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+<% @page_title = "Show Author: #{@author.author_name}" %>
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+<center>
+  <h2>Show Author</h2>
+<br><br>
+  <table summary="Quote detail view">
+    <tr>
+      <th>Author Name</th>
+      <td><%= @author.author_name %></td>
+    </tr>
+
+  </table>
+<br><br>
+
+<%= link_to 'Edit', edit_author_path(@author) %> |
+<%= link_to 'Back', authors_path %>
+</center>

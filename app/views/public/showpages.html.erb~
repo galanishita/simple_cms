@@ -1,0 +1,122 @@
+
+ <%= javascript_include_tag "/assets/simply_js/scroll/jquery.mousewheel.min.js" %>
+  <%= javascript_include_tag "/assets/simply_js/scroll/jquery.mCustomScrollbar.js" %>
+ <%= javascript_include_tag "/assets/simply_js/backup/font_size.js" %>
+<style id="jsbin-css">
+
+</style>
+<script>
+		(function($){
+			$(window).load(function(){
+				$("#navigation").mCustomScrollbar({
+					set_width:false, /*optional element width: boolean, pixels, percentage*/
+					set_height:false, /*optional element height: boolean, pixels, percentage*/
+					horizontalScroll:false, /*scroll horizontally: boolean*/
+					scrollInertia:550, /*scrolling inertia: integer (milliseconds)*/
+					scrollEasing:"easeOutCirc", /*scrolling easing: string*/
+					mouseWheel:"pixels", /*mousewheel support and velocity: boolean, "auto", integer, "pixels"*/
+					mouseWheelPixels:60, /*mousewheel pixels amount: integer*/
+					autoDraggerLength:true, /*auto-adjust scrollbar dragger length: boolean*/
+					scrollButtons:{ /*scroll buttons*/
+						enable:false, /*scroll buttons support: boolean*/
+						scrollType:"continuous", /*scroll buttons scrolling type: "continuous", "pixels"*/
+						scrollSpeed:20, /*scroll buttons continuous scrolling speed: integer*/
+						scrollAmount:40 /*scroll buttons pixels scroll amount: integer (pixels)*/
+					},
+					advanced:{
+						updateOnBrowserResize:true, /*update scrollbars on browser resize (for layouts based on percentages): boolean*/
+						updateOnContentResize:false, /*auto-update scrollbars on content resize (for dynamic content): boolean*/
+						autoExpandHorizontalScroll:false, /*auto expand width for horizontal scrolling: boolean*/
+						autoScrollOnFocus:true /*auto-scroll on focused elements: boolean*/
+					},
+					callbacks:{
+						onScrollStart:function(){}, /*user custom callback function on scroll start event*/
+						onScroll:function(){}, /*user custom callback function on scroll event*/
+						onTotalScroll:function(){}, /*user custom callback function on scroll end reached event*/
+						onTotalScrollBack:function(){}, /*user custom callback function on scroll begin reached event*/
+						onTotalScrollOffset:0, /*scroll end reached offset: integer (pixels)*/
+						whileScrolling:false, /*user custom callback function on scrolling event*/
+						whileScrollingInterval:30 /*interval for calling whileScrolling callback: integer (milliseconds)*/
+					}
+				});
+			});
+		})(jQuery);
+	</script>
+	<body style="background:url(<%= @pageid.backimg_url %>) no-repeat right top <%= @pageid.backimg_color %> fixed;">
+  <%= render(:partial => 'layouts/slidenav', :locals => {:subjects => @subjects}) %>
+
+<div id="right-side">
+<div class="side-nav-bg">
+  	<div class="main-biography-heading">
+    	<% @pageid.images.each do |img| %>
+			<%= image_tag(img.image_url, :width => '180') %>
+		<%end%>
+		</div>
+<ul id="navigation">
+	<% @pagesec.visible.sorted.each do |pagesec| %>
+<% @link = pagesec.name.gsub(/([_@#!%()\-=;><,' '{}\~\[\]\.\/\?\"\*\^\$\+\-]+)/,'-') %>
+  			 <li><%= link_to(pagesec.name,"#"+@link, :class=>'topLink')%></li>
+                 	<% end %>
+  </ul>
+</div>
+<div class="content-wrapper">
+<!-- AddThis Button BEGIN -->
+<div class="addthis_toolbox addthis_default_style" style="margin-top: 40px;">
+<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+<a class="addthis_button_tweet"></a>
+<a class="addthis_button_pinterest_pinit"></a>
+<a class="addthis_counter addthis_pill_style"></a>
+</div>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-513053a26c4082bc"></script>
+<!-- AddThis Button END -->
+<%= image_tag(@pageid.headimg_url) %> 
+  <div class="font-size-wrapper">
+  <a href="javascript:decreaseFontSize();" class="font-size-link">-</a> &nbsp;&nbsp; Text Size &nbsp;&nbsp;
+		<a href="javascript:increaseFontSize();" class="font-size-link">+</a>
+		</div>
+
+		<% @pagesec.visible.sorted.each do |pagesec| %>
+<% @link = pagesec.name.gsub(/([_@#!%()\-=;><,' '{}\~\[\]\.\/\?\"\*\^\$\+\-]+)/,'-') %>	
+			<% if pagesec.id == 1 %>
+			
+			<div id="<%= @link %>">
+                          <p><%= raw(pagesec.content) %></p>
+			
+			<% else %>
+			
+			<div class="page mtop100" id="<%= @link %>">
+                          <p><%= raw(pagesec.content) %></p>
+      
+        <% end %>
+
+ 			</div>
+ <div style="clear:both"></div>
+  <div class="division"></div>
+		<% end %>
+		
+	<br/><br/>
+
+</div>
+</div>
+<script>
+$('a[href*=#]').click(function() {
+
+ if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+ && location.hostname == this.hostname) {
+ $('ul#navigation a.active').removeClass('active');
+    
+   var $target = $(this.hash);
+   $target = $target.length && $target
+   || $('[name=' + this.hash.slice(1) +']');
+   if ($target.length) {
+  var targetOffset = $target.offset().top;
+  $('html,body')
+  .animate({scrollTop: targetOffset}, 1200);
+  $(this).addClass('active');
+    return false;
+   }
+ }
+  });
+</script>
+

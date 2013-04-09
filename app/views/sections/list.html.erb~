@@ -1,14 +1,30 @@
 <% @page_title = "Sections List" %>
 
-<%= link_to("<< Back to Pages List", {:controller => "pages", :action => 'list'}, :class => 'back-link') %>
+<div style='width:100%; height:auto; position:relative; background:#ccc;'>
+
+<%= link_to("Back to Pages List", {:controller => "pages", :action => 'list', :subject_id => @page.subject_id}, :class => 'back-to-menu') %>
+
+<%= link_to("Logout", {:controller => 'access', :action => 'logout'}, :class => 'logout')%>
+
+<div class="top-linebar">Sections</div>
+
+<div style="clear:both;"></div>
+</div>
+
+<div style="height:60px;">
+
+
+<%= link_to("Add New Section", {:action => 'new', :page_id => @page.id}, :class => 'add-new-subject') %>
+
+</div>
+<div style="clear:both;"></div>
+
+
 
 <div class="section list">
-  <h2>Sections</h2>
-  
-  <%= link_to("Add New Section", {:action => 'new', :page_id => @page.id}, :class => 'action new') %>
 
   <table class="listing" summary="Section list">
-    <tr class="header">
+    <tr class="header-top">
       <th>&nbsp;</th>
       <th>Section</th>
       <th>Visible</th>

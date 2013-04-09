@@ -1,0 +1,115 @@
+<aside>
+	<ul class="sk-left-menu"><br/>
+		<% @subjects.visible.sorted.each do |subject| %>
+			<% if subject.name == "Quotations" %>
+				 <li><%= link_to(subject.name, {:action => 'quotations', :id => subject.id})%></li>
+ 			<% else %>
+ 				 <li><%= link_to(subject.name, {:action => 'show', :id => subject.id})%></li>
+ 			<% end %>
+		<% end %>
+	</ul><br/><br/>
+</aside>
+
+<div class="main-wrapper-inner">
+ <div class="biography-article">
+ 	<div style="margin-top:31px;">
+ 		<div class="biography-band-bg">
+			<div class="biography-band-title"><br><%= @subjectname.name %></div>
+			<div class="biography-band-title2"><%= @subsubjectid.name %></div>
+		</div>
+         <div class="biography-subtitle">              
+		<% @subsubjectid.images.each do |subsubjectimages| %>
+			<embed src="<%= asset_path(subsubjectimages.image_url) %>"  width="1500" height="150" wmode="transparent"/>
+		<% end%>
+
+	</div>
+	</div>
+
+<div class="biography-wrapper"  style=" margin-top:30px;">
+
+<%= image_tag("simply_images/advertising.jpg", :width => '330', :height => '55', :class => 'advertising01')%>
+
+   <div id="tabs">
+	<ul>
+                        <li><a href="#tabs-1">Updates</a></li>
+                        <li><a href="#tabs-2">A - Z</a></li>
+       </ul>
+<div id="tabs-1">
+                        <div id="paginationdemo" class="demo">
+
+                <div id="p1" class="pagedemo _current" style="display: block; ">
+                
+                	
+                	 <% @subpages.visible.sorted.each do |subpage| %>
+                	 <div class="biography-box">
+					<p id="gallery2">
+							<% subpage.images.each do |img| %>
+							<% if(img.imageable_id == subpage.id) %>
+						<%= link_to (image_tag(img.image_url , :width => '132', :height => '132', :class => 'img')).html_safe, {:action => 'showpages', :id => subpage.id} %>
+							<% end %>							
+							<%end%>
+
+							<span class="bio-head"><strong><%= subpage.name %></strong></span><br/>
+							<br><%= subpage.intro %><br>
+							<%= link_to("Read More", :action => 'showpages', :id => subpage.id)%>
+							
+							</p>	
+							 <div style="clear:both;"></div>
+							  </div>
+					<% end %>
+ </div></div>
+                     <div id="tabs-2">
+                    	<table width="100%">
+                              <tr>
+                              <td>&nbsp;</td>
+                              <td></td>
+                              <td></td>
+                              </tr>
+                              <tr><tr>
+                              <td>&nbsp;</td>
+                              <td></td>
+                              <td></td>
+                              </tr>
+                                <tr>
+                              <td width="33%">
+                              <ul>
+                              <% @pagename.each do |pagename| %>
+                              <li><%= link_to(pagename.name, :class =>'biography-text') %></li>
+                                    <% end %>     
+                              </ul>
+                              </td>
+                              </tr>
+                        </table>
+                    </div>
+               
+                   
+				
+				
+                <div style="clear:both"></div>         
+		
+        <!--<div style="float:left; margin-top:20px; width:780px; height:60px;">
+              <div id="demo5" class="jPaginate" >
+                  <div class=""><a class="jPag-first">First</a><span class="jPag-sprevious">«</span></div>
+                  <div class="jPag-control-front" style="left: 241px; "><span class="jPag-snext">»</span><a class="jPag-last">Last</a></div>
+                  
+			  </div>
+              <div style="clear:both"></div>
+		</div>-->
+        <div style="clear:both"></div>
+      
+                    </div>
+	
+	</div>
+</div>
+
+	
+
+ <div class="subsubject-side-link">
+<ul class="categories-nav">
+<% @subsubjectname.visible.sorted.each do |subsubjectname| %>
+    <li style="border-top:1px dotted #999;"><%= link_to(subsubjectname.name, {:action => 'showsubsubject', :id => subsubjectname.id})%></li>
+<% end %>
+</div>
+  </div>
+</div>
+

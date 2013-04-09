@@ -1,31 +1,71 @@
 <% @page_title = "Show Subject: #{@subject.name}" %>
 
-<%= link_to("<< Back to List", {:action => 'list'}, :class => 'back-link') %>
+<div style='width:100%; height:auto; position:relative; background:#ccc;'>
 
-<div class="subject show">
-  <h2>Show Subject</h2>
+<%= link_to("Back to List", {:action => 'list'}, :class => 'back-to-menu') %>
 
-  <table summary="Subject detail view">
+<%= link_to("Logout", {:controller => 'access', :action => 'logout'}, :class => 'logout')%>
+
+<div class="top-linebar">Show Subject</div>
+
+<div style="clear:both;"></div>
+</div>
+
+
+<div style="clear:both;"></div>
+<div class="innerpage-form-background">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family:Kalinga, Arial, Helvetica, sans-serif; font-size:16px;">
+   
+
     <tr>
-      <th>Name</th>
-      <td><%= @subject.name %></td>
+    <td width="32%" align="right">Name :</td>
+    <td width="2%">&nbsp;</td>
+    <td width="66%" align="left"><p class="result-text"><%= @subject.name %></p></td>
     </tr>
     <tr>
-      <th>Position</th>
-      <td><%= @subject.position %></td>
+    <td height="7"></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td width="32%" align="right">Position :</td>
+    <td width="2%">&nbsp;</td>
+    <td width="66%" align="left"><p class="result-text"><%= @subject.position %></p></td>
     </tr>
     <tr>
-      <th>Visible?</th>
-      <td><%= @subjectvisible? true : false %></td>
+    <td height="7"></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td width="32%" align="right">Visible :</td>
+    <td width="2%">&nbsp;</td>
+    <td width="66%" align="left"><p class="result-text"><%= @subject.visible %></p></td>
     </tr>
     <tr>
-      <th>Created</th>
-      <td><%= @subject.created_at %></td>
+    <td height="7"></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td width="32%" align="right">Created :</td>
+    <td width="2%">&nbsp;</td>
+    <td width="66%" align="left"><p class="result-text"><%= @subject.created_at %></p></td>
     </tr>
     <tr>
-      <th>Updated</th>
-      <td><%= @subject.updated_at %></td>
+    <td height="7"></td>
+    <td></td>
+    <td></td>
     </tr>
-  </table>
-  
+
+    <tr>
+    <td width="32%" align="right">Updated :</td>
+    <td width="2%">&nbsp;</td>
+    <td width="66%" align="left"><p class="result-text"><%= @subject.updated_at %></p></td>
+    </tr>
+    </table>
+
 </div>

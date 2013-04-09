@@ -1,0 +1,4 @@
+class AddColumToImages < ActiveRecord::Migration
+  def change
+  end
+end

@@ -1,0 +1,9 @@
+class ChangeColumnSubsubject < ActiveRecord::Migration
+  def up
+add_column :sub_subjects, :image_id, :integer
+  end
+
+  def down
+remove_column :sub_subjects, :image_id, :integer
+  end
+end

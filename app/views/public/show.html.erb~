@@ -1,12 +1,231 @@
-<h2><%= @page.name %></h2>
 
-<% @page.sections.visible.sorted.each do |section| %>
-  <div class="section">
-    <% case section.contenttype
-       when 'HTML' %>
-         <%= section.content %>
-    <% when 'text' %>
-        <p><%= section.content %></p>
-    <% end %>
-  </div>
+<aside>
+	<ul class="sk-left-menu"><br/>
+		<% @subjects.visible.sorted.each do |subject| %>
+				<% if subject.name == "Quotations" %>
+  			 <li><%= link_to(subject.name, {:action => 'quotations', :id => subject.id})%></li>
+  			 	<% else %>
+  			 	<li><%= link_to(subject.name, {:action => 'show', :id => subject.id})%></li>
+ 				<% end %>
+		<% end %>
+	</ul><br/><br/>
+</aside>
+
+<div class="main-wrapper-inner">
+<div class="great-stories-banner">
+	<% @subnav.images.each do |subjectimages| %>
+		<embed src="<%= asset_path(subjectimages.image_url) %>"  width="100%" height="300" wmode="transparent"	/>
+	<% end%>
+</div>
+
+<div class="biography-wrapper">
+
+   <section class="tabs">
+	<input id="tab-1" type="radio" name="radio-set" class="tab-selector-1" checked="checked" />
+		<label for="tab-1" class="tab-label-1" style="border-left:.5px #999 solid;">About <%= @subnav.name %></label>
+		
+	<input id="tab-2" type="radio" name="radio-set" class="tab-selector-2" />
+		<label for="tab-2" class="tab-label-2">Updates</label>
+
+        <input id="tab-3" type="radio" name="radio-set" class="tab-selector-3" />
+		<label for="tab-3" class="tab-label-3">A - Z</label>
+
+	<div class="clear-shadow"></div>
+
+	<%= image_tag("simply_images/advertising.jpg", :width => '330', :height => '55', :class => 'advertising01')%>
+
+         <div style="clear:both;"></div>
+
+	          <div class="content2">
+                 	 <div class="content-1">
+
+                         	 <span class="bio-head2" style="margin-top:40px;"><br><%= @subnav.name %></span>
+                         	 <span class="bio-text" style="margin-top:30px;"><p><%= @subnav.content%></p></span>
+                			<span style="clear:both;"></span>
+                
+		            	<%= image_tag("simply_images/most-viewed.png", :width => '660', :height => '22', :style => 'margin-top:70px;')%>
+        <span style="width:100%;">
+                                    <span id="gallery">
+                                      <% @relpages.visible.sorted.each do |relpage| %>
+					
+							<% relpage.images.each do |img| %>
+							<% if(img.imageable_id == relpage.id) %>
+						<%= link_to ('<span class ="title">'+relpage.name+'</span>' + image_tag(img.image_url , :width => '190', :height => '106', :class => 'grayscale')).html_safe, {:action => 'showpages', :id => relpage.id} %>	<%end%>
+							
+							<%end%>
+					<% end %>
+                                    </span>
+                                </span>                   	
+                   	</div>
+			<div class="content-2">
+                        	<table width="100%" border="0" cellspacing="0" cellpadding="0">
+                            	<tr><td height="30">&nbsp;</td></tr>
+                            	<tr>
+                            	  <td valign="top" align="left" height="28"><%= image_tag("simply_images/latest.png", :width => '660', :height => '22', :style => 'margin-top:70px;')%></td>
+                                </tr>
+				 <tr>
+                                <td>
+                                <span style="clear:both;"></span>
+                                <span style="width:100%;">
+                                    <span id="gallery"> 		
+					<% @relpages.visible.sorted.each do |relpage| %>
+					
+							<% relpage.images.each do |img| %>
+							<% if(img.imageable_id == relpage.id) %>
+						<%= link_to ('<span class ="title">'+relpage.name+'</span>' + image_tag(img.image_url , :width => '190', :height => '106', :class => 'grayscale')).html_safe, {:action => 'showpages', :id => relpage.id} %>
+							<%end%>
+							
+							<%end%>
+					<% end %>                                       
+                                    </span>
+                                </span>
+
+                                </td>
+                                </tr>
+				<tr><td height="40">&nbsp;</td></tr>
+                                <tr>
+                            	  <td valign="top" align="left" height="28"><%= image_tag("simply_images/most-commented.png", :width => '660', :height => '22', :style => 'margin-top:70px;')%></td>
+                                </tr>
+                                <tr>
+                                <td>
+                                <span style="clear:both;"></span>
+                                <span style="width:100%;">
+                                    <span id="gallery">
+                                     <% @relpages.visible.sorted.each do |relpage| %>
+					
+							<% relpage.images.each do |img| %>
+							<% if(img.imageable_id == relpage.id) %>
+						<%= link_to ('<span class ="title">'+relpage.name+'</span>' + image_tag(img.image_url , :width => '190', :height => '106', :class => 'grayscale')).html_safe, {:action => 'showpages', :id => relpage.id} %>	<%end%>
+							
+							<%end%>
+					<% end %>
+                                    </span>
+                                </span>
+				</td>
+                                </tr>
+ 				<tr><td height="40">&nbsp;</td></tr>
+                                <tr>
+                            	  <td valign="top" align="left" height="28"><%= image_tag("simply_images/most-viewed.png", :width => '660', :height => '22', :style => 'margin-top:70px;')%></td>
+                                </tr>
+                                <tr>
+                                <td>
+                                <span style="clear:both;"></span>
+                                <span style="width:100%;">
+                                    <span id="gallery">
+                                      <% @relpages.visible.sorted.each do |relpage| %>
+					
+							<% relpage.images.each do |img| %>
+							<% if(img.imageable_id == relpage.id) %>
+						<%= link_to ('<span class ="title">'+relpage.name+'</span>' + image_tag(img.image_url , :width => '190', :height => '106', :class => 'grayscale')).html_safe, {:action => 'showpages', :id => relpage.id} %>	<%end%>
+							
+							<%end%>
+					<% end %>
+                                    </span>
+                                </span>
+                                </td>
+                                </tr>
+				</table>
+			</div>
+<script type="text/javascript">
+function showSelected(sortby)
+	{
+	
+	if(sortby=='fname')
+		{
+		document.getElementById('popularList').style.visibility = "hidden";
+		document.getElementById('lnameList').style.visibility = "hidden";
+		document.getElementById('fnameList').style.visibility = "visible";
+		}
+	if(sortby=='lname')
+		{
+		document.getElementById('popularList').style.visibility = "hidden";
+		document.getElementById('lnameList').style.visibility = "visible";
+		document.getElementById('fnameList').style.visibility = "hidden";
+		}
+	if(sortby=='popular')
+		{
+		document.getElementById('popularList').style.visibility = "visible";
+		document.getElementById('lnameList').style.visibility = "hidden";
+		document.getElementById('fnameList').style.visibility = "hidden";
+		}
+	}
+</script>
+
+			<div  class="content-3"> 
+
+<select name='test' onChange="showSelected(this.value);">
+	<option value='popular'>Popular</option>
+	<option value='fname'>First Name</option>
+	<option value='lname'>Last Name</option>
+</select>
+	<br><br>	
+			<span id="popularList" style="z-index:1; position:absolute;">
+			<ul>
+			<% cur_letter = nil %>
+				<% @titles.each do |t| %>
+  					<% title_letter = t.popular_name[0].capitalize.match(/[A-Z]/) ? t.popular_name[0].capitalize : "#" %> 
+  					<% if title_letter != cur_letter %>
+   				 	<% cur_letter = title_letter %>
+    					<li><%= cur_letter %></li>
+  					<% end %>
+  					
+  					<li><%= link_to(t.popular_name, {:action => 'showpages', :id => t.id}) %></li>
+				<% end %> 
+			</ul>
+			</span>
+		<span id="fnameList" style="visibility:hidden; z-index:2; position:absolute;">
+			<ul>
+			<% cur_letter = nil %>
+				<% @titles.each do |t| %>
+  					<% title_letter = t.name[0].capitalize.match(/[A-Z]/) ? t.name[0].capitalize : "#" %> 
+  					<% if title_letter != cur_letter %>
+   				 	<% cur_letter = title_letter %>
+    					<li><%= cur_letter %></li>
+  					<% end %>
+  					
+  					<li><%= link_to(t.name, {:action => 'showpages', :id => t.id}) %></li>
+				<% end %> 
+			</ul>
+		</span>
+		<span id="lnameList" style="visibility:hidden; z-index:3; position:absolute;">
+			<ul>
+				<% cur_letter = nil %>
+				<% @titles.each do |title| %>
+				<% @titles1 = title.name.split(' ') %>
+	
+				<% @i = @titles1.count %>
+				<% @titlename ="" %>
+				<% while @i >= 0  do %>
+				<% @titlename += @titles1[@i].to_s + ' '  %>	   
+   				    <% @i = @i -1 %>
+					<%end %>
+				
+  					<% title_letter = @titlename[1].capitalize.match(/[A-Z]/) ? @titlename[1].capitalize : "#" %> 
+  					<% if title_letter != cur_letter %>
+   				 	<% cur_letter = title_letter %>
+    					<li><%= cur_letter %></li>
+  					<% end %>
+				<li>				
+				<%= link_to(@titlename, {:action => 'showpages', :id => title.id})  %></li>					
+				<% end %>
+			</ul>		
+		</span>
+			
+			</div>
+                   </div>		
+						
+                        <div style="clear:both;"></div>
+</section>
+</div>
+
+	
+
+ <div class="subsubject-side-link">
+<ul class="categories-nav">
+<% @subsubjectnav.visible.sorted.each do |subsubjectnav| %>
+    <li style="border-top:1px dotted #999;"><%= link_to(subsubjectnav.name, {:action => 'showsubsubject', :id => subsubjectnav.id})%></li>
 <% end %>
+</div>
+
+</div>
+

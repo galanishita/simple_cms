@@ -1,0 +1,8 @@
+<br/><br/>
+<center><h1>Editing author</h1>
+<br/><br/>
+<%= render 'form' %>
+<br/><br/>
+<%= link_to 'Show', @author %> |
+<%= link_to 'Back', authors_path %>
+</center>

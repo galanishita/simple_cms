@@ -1,6 +1,6 @@
 <%= error_messages_for(@admin_user) %>
 
-<table summary="Admin user form fields">
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family:Kalinga, Arial, Helvetica, sans-serif; font-size:16px;">
   <tr>
     <th><%= f.label(:first_name) %></th>
     <td><%= f.text_field(:first_name) %></td>

@@ -1,0 +1,109 @@
+<div data-gadget="simplyK.gadget.OnesimplyKNav" data-load="preloaded" data-search-redirect="false">
+            <nav class="gnav platform-font-1">
+            <div class="tier0 l-table l-fullwidth">
+            <div class="home facet nav-section l-cell">
+            <%= link_to image_tag("logo.jpg", :width => '312', :height => '33'), :action => 'index' %>
+            </div>
+            <div class="home facet nav-section l-cell">
+            <%= link_to image_tag("home.png", :width => '25', :height => '25'), :action => 'index' %>
+            </div>
+            <div class="home facet nav-section l-cell">
+            <a href="about-us.html">About Us</a>
+            </div>
+            <div class="shop facet nav-section l-cell "
+            data-subnav="shop"
+            data-nav-tracking="shop">
+            <a data-track-click="true" href="#"><span class="facet-label glyph-after" data-glyph="&#109;">Subjects</span></a>
+            </div>
+            <div class="sports facet nav-section l-cell "
+            data-subnav="sports"
+            data-nav-tracking="sports">
+            <a data-track-click="true" href="#"><span class="facet-label glyph-after" data-glyph="&#109;">Platforms</span></a>
+            </div>
+            
+            
+            
+        <div class="search nav-section l-cell">
+            <form action="#" class="search-container">
+            <input type="hidden" name="l" value="shop,search" />
+            <label for="gsearch">
+            <input class="gsearch" type="search" name="searchList" value="" />
+            <span class="placeholder platform-font-2" data-full-text="Simply Search" data-short-text="SEARCH"></span>
+            <span class="glyph-replace focus" data-glyph="&#99;"></span>
+            <span class="glyph-replace clear" data-glyph="&#79;"></span>
+            </label>
+            </form>
+            </div>
+            <div class="home facet nav-section l-cell">
+           
+              
+          <strong style="color:#dc2028;"><%= link_to('hindi',{ :action => 'index', :lang => 'hindi'}) %></strong> 
+       
+            </div>
+            
+            <div class="home facet nav-section l-cell">
+            <a href="#"><strong>Login</strong></a>
+            </div>
+            </div>
+            <div class="tier1 l-fullwidth">
+            <div data-subnav="shop"
+            class="subnav shop tracking is-hidden" data-nav-tracking="shop">
+            <div class="subnav-container">
+            <div class="subnav-section l-table">
+
+                 <%= render(:partial => 'layouts/navigation', :locals => {:subjects => @subjects}) %>
+            </div>
+            </div>
+            </div>
+            <div data-subnav="sports"
+            class="subnav sports tracking is-hidden"
+            data-nav-tracking="sports">
+            <div class="subnav-container">
+            <div class="subnav-section l-table">
+            <div class="subnav-item l-cell l-w6 visual-format">
+            <a data-subnav-label="RUNNING"
+            href="#"
+            data-nav-tracking="running"
+            data-track-click="true">
+            <%= image_tag("simply_images/videos.png", :width => '100', :height => '100') %>
+            <div class="subnav-itemheader">VIDEO</div>
+            </a>
+            </div>
+            <div class="subnav-item l-cell l-w6 visual-format">
+            <a data-subnav-label="BASKETBALL"
+            href="#"
+            data-nav-tracking="basketball"
+            data-track-click="true">
+            <%= image_tag("simply_images/audios.png", :width => '100', :height => '100') %>
+            <div class="subnav-itemheader">AUDIO</div>
+            </a>
+            </div>
+            <div class="subnav-item l-cell l-w6 visual-format">
+            <a data-subnav-label="FOOTBALL"
+            href="#"
+            data-nav-tracking="football"
+            data-track-click="true">
+            <%= image_tag("simply_images/books.png", :width => '100', :height => '100') %>
+            <div class="subnav-itemheader">BOOKS</div>
+            </a>
+            </div>
+            <div class="subnav-item l-cell l-w6 visual-format">
+            <a data-subnav-label="SOCCER"
+            href="#"
+            data-nav-tracking="soccer"
+            data-track-click="true">
+            <%= image_tag("simply_images/posters.png", :width => '100', :height => '100') %>
+            <div class="subnav-itemheader">POSTERS</div>
+            </a>
+            </div>
+            
+            </div>
+            </div>
+            <div class="morenav">
+            <hr class="onesimplyK-divider"/>
+            
+            </div>
+            </div>
+            </div>
+            </nav>
+		</div>  

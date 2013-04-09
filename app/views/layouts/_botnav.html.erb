@@ -1,0 +1,63 @@
+<% subjects ||= [] %>
+
+
+<ul class="glossymenu">
+<% subjects.each do |subject| %>
+
+ 	<% if(subject.position <= 3) %>
+		
+		<% if subject.name == "Quotations" %>
+  			<li>  			
+			   <%= link_to(subject.name, {:action => 'quotations', :id => subject.id})%>
+     			</li>
+		<% else %>
+			<li>  			
+			   <%= link_to(subject.name, {:action => 'show', :id => subject.id})%>
+     			</li>
+ 		<% end %>	
+  	<% end %>
+  
+ <% end %>
+ </ul>
+
+<ul class="glossymenu" style="margin-left:5px;">
+<% subjects.each do |subject| %>
+
+ 	<% if(subject.position > 3 && subject.position<=6) %>
+		
+  			<li>
+			 <%= link_to(subject.name, {:action => 'show', :id => subject.id})%>
+     		</li>
+ 		
+  	<% end %>
+
+  	<% end %>
+  	</ul>
+  	
+  			<ul class="glossymenu" style="margin-left:5px;">
+<% subjects.each do |subject| %>
+
+ 	<% if(subject.position > 6 && subject.position<=9) %>
+		
+  			<li>
+			<%= link_to(subject.name, {:controller => 'subjects', :action => 'show', :id => subject.id})%>
+     		</li>
+ 		
+  	<% end %>
+
+  	<% end %>
+</ul>
+
+		<ul class="glossymenu" style="margin-left:5px;">
+<% subjects.each do |subject| %>
+
+ 	<% if(subject.position > 9 && subject.position<=10) %>
+
+  			<li>
+			<%= link_to(subject.name, {:controller => 'subjects', :action => 'show', :id => subject.id})%>
+     		</li>
+ 		
+  	<% end %>
+
+<% end %>
+</ul>

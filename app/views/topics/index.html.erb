@@ -1,0 +1,32 @@
+<%= link_to("<< Back to Menu", {:controller => 'access', :action => 'menu'}, :class => 'back-link') %>
+<center>
+<h3>Listing topics</h3>
+<br/><br/><br/><br/>
+<table>
+  <tr>
+    <th>Topic Name</th>
+ 
+    <th colspan="4">Action</th>
+      </tr>
+
+<% @topics.each do |topic| %>
+  <tr>
+   <td>
+	<%= topic.topic_name %>
+	</td>
+
+	 <td><%= link_to("Add Image", {:controller => 'quoteimages', :action => 'new', :quoteimageable_id => topic.id, :quoteimageable_type => 'Topic'}) %></td>
+    <td><%= link_to 'Show', topic %></td>
+    <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
+    <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br/><br/>
+<%= link_to 'New Topic', new_topic_path %><br/><br/>
+<%= will_paginate @quote %>
+    </center>
+
+
+

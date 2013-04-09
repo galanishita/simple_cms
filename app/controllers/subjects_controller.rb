@@ -20,12 +20,14 @@ class SubjectsController < ApplicationController
 
 	def new
 		@subject = Subject.new
+		@images = Image.order(:name)
 		@subject_count = Subject.count + 1
 	end
 
 
 	def create
-		 new_position = params[:subject].delete(:position)
+    new_position = params[:subject].delete(:position)
+   @images = Image.order(:name)
     # Instantiate a new object using form parameters
     @subject = Subject.new(params[:subject])
     # Save the object
@@ -43,6 +45,7 @@ class SubjectsController < ApplicationController
 
 	def edit
 		@subject = Subject.find(params[:id])
+		@images = Image.order(:name)
 		@subject_count = Subject.count
 	end
 

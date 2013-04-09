@@ -1,43 +1,96 @@
 <% @page_title = "Show Section: #{@section.name}" %>
 
-<%= link_to("<< Back to List", {:action => 'list', :page_id => @page.id}, :class => 'back-link') %>
+<div style='width:100%; height:auto; position:relative; background:#ccc;'>
 
-<div class="section show">
-  <h2>Show Section</h2>
+<%= link_to("Back to List", {:action => 'list', :page_id => @page.id}, :class => 'back-to-menu') %>
 
-  <table summary="Section detail view">
+<%= link_to("Logout", {:controller => 'access', :action => 'logout'}, :class => 'logout')%>
+
+<div class="top-linebar">Show Section</div>
+
+<div style="clear:both;"></div>
+</div>
+
+
+<div class="scriptpage-form-background">
+
+  <table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family:Kalinga, Arial, Helvetica, sans-serif; font-size:16px;">
     <tr>
-      <th>Page ID</th>
-      <td><%= @section.page_id %></td>
+    <td width="13%" align="right">Page ID :</td>
+    <td width="4%">&nbsp;</td>
+    <td width="84%" align="left"><p class="result-text"><%= @section.page_id %></p></td>
     </tr>
     <tr>
-      <th>Name</th>
-      <td><%= @section.name %></td>
+    <td height="7"></td>
+    <td></td>
+    <td></td>
     </tr>
     <tr>
-      <th>Position</th>
-      <td><%= @section.position %></td>
+    <td align="right">Name :</td>
+    <td>&nbsp;</td>
+    <td align="left"><p class="result-text"><%= @section.name %></p></td>
     </tr>
     <tr>
-      <th>Visible?</th>
-      <td><%= @section.visible ? 'true' : 'false' %></td>
+    <td align="right">Position :</td>
+    <td>&nbsp;</td>
+    <td align="left"><p class="result-text"><%= @section.position %></p></td>
     </tr>
     <tr>
-      <th>Created</th>
-      <td><%= @section.created_at %></td>
+    <td height="7"></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td align="right" valign="top">Visible? :</td>
+    <td>&nbsp;</td>
+    <td align="left"><p class="result-text"><%= @section.visible ? 'true' : 'false' %></p></td>
     </tr>
     <tr>
-      <th>Updated</th>
-      <td><%= @section.updated_at %></td>
+    <td height="7"></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td align="right">Created :</td>
+    <td>&nbsp;</td>
+    <td align="left"><p class="result-text"><%= @section.created_at %></p></td>
     </tr>
     <tr>
-      <th>Content Type</th>
-      <td><%= @section.contenttype %></td>
+    <td height="7"></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td align="right">Updated :</td>
+    <td>&nbsp;</td>
+    <td align="left"><p class="result-text"><%= @section.updated_at %></p></td>
     </tr>
     <tr>
-      <th>Content</th>
-      <td><%= @section.content %></td>
+    <td height="7"></td>
+    <td></td>
+    <td></td>
     </tr>
+
+    <tr>
+    <td align="right">Content Type :</td>
+    <td>&nbsp;</td>
+    <td align="left"><p class="result-text"><%= @section.contenttype %></p></td>
+    </tr>
+    <tr>
+    <td height="7"></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td align="right" valign="top">Content :</td>
+    <td>&nbsp;</td>
+    <td align="left" valign="top"><p class="result-text"><%= @section.content %></p></td>
+    </tr>
+    
   </table>
   
 </div>

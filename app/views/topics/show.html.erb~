@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+<center>
+  <h2>Show Topic</h2>
+<br><br>
+  <table summary="Quote detail view">
+    <tr>
+      <th>Topic Name</th>
+      <td><%= @topic.topic_name %></td>
+    </tr>
+
+  </table>
+<br><br>
+</center>
+<%= link_to 'Edit', edit_topic_path(@topic) %> |
+<%= link_to 'Back', topics_path %>
+

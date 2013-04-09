@@ -22,6 +22,7 @@ class PagesController < ApplicationController
     @page = Page.new(:subject_id => @subject.id)
     @page_count = @subject.pages.size + 1
     @subjects = Subject.order('position ASC')
+    @sub_subjects = SubSubject.order('position ASC').where(:subject_id => @subject.id)
   end
   
   def create
@@ -38,7 +39,8 @@ class PagesController < ApplicationController
       # If save fails, redisplay the form so user can fix problems
       @page_count = @subject.pages.size + 1
       @subjects = Subject.order('position ASC')
-      render('new')
+     @sub_subjects = SubSubject.order('position ASC').where(:subject_id => @subject.id)
+        render('new')
     end
   end
   
@@ -46,6 +48,7 @@ class PagesController < ApplicationController
     @page = Page.find(params[:id])
     @page_count = @subject.pages.size
     @subjects = Subject.order('position ASC')
+@sub_subjects = SubSubject.order('position ASC').where(:subject_id => @subject.id)
   end
   
   def update
@@ -71,9 +74,9 @@ class PagesController < ApplicationController
   end
   
   def destroy
-    page = Page.find(params[:id])
-    page.move_to_position(nil)
-    page.destroy
+    @page = Page.find(params[:id])
+    @page.move_to_position(nil)
+    @page.destroy
     flash[:notice] = "Page destroyed."
     redirect_to(:action => 'list', :subject_id => @subject.id)
   end

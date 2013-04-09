@@ -1,11 +1,14 @@
 require 'position_mover'
 class Page < ActiveRecord::Base
-   attr_accessible :name, :permalink, :position, :visible, :subject_id
-	
+   attr_accessible :name, :permalink, :position, :visible, :subject_id, :sub_subject_id, :image_url, :name, :imageable_id, :imageable_type, :backimg_url, :backimg_color, :headimg_url, :popular_name, :intro
+mount_uploader :backimg_url, ImagesUploader	
+mount_uploader :headimg_url, ImagesUploader
 include PositionMover
   
   belongs_to :subject
+  belongs_to :sub_subject
   has_many :sections
+  has_many :images, :as => :imageable
   has_and_belongs_to_many :editors, :class_name => "AdminUser"
 
   validates_presence_of :name
@@ -25,4 +28,5 @@ include PositionMover
   def position_scope
     "pages.subject_id = #{subject_id.to_i}"
   end
+
 end

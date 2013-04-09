@@ -1,0 +1,7 @@
+<center><br><br>
+<h3>Editing image</h3>
+<br><br>
+<%= render 'form' %>
+
+<%= link_to 'Show', @image %> |
+<%= link_to 'Back', images_path %>

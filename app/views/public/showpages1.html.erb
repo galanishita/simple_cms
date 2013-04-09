@@ -1,0 +1,52 @@
+  
+<style>
+#header2 #logo{margin-top:100px;margin-left:26px}a{color:#DC2028}a.button,button,input[type=submit],input[type=reset],input[type=button]{background-color:#DC2028}.jspDrag{background:#DC2028}#social-icons li:hover{background-color:#0b88e4}#header2{
+	background-color: #DC2028
+}.flex-direction-nav a{background-color:#0b88e4}.portfolio-hover .bg-color{background:#0b88e4}.image-overlay{background-color:#0b88e4}#portfolio-categories li a.current{color:#0b88e4}#blog-posts .blog-post.pagination-wrap{background-color:#0b88e4}.post-format-wrap.pfquote{}.blog-post a:hover{color:#0b88e4}#header2 #plus-sign .circle{background-color:#DC2028;}
+</style>
+	            
+  <%= render(:partial => 'layouts/slidenav', :locals => {:subjects => @subjects}) %>
+  
+<div id="right-side">
+<div class="side-nav-bg">
+    	
+    	<div class="main-biography-heading">
+    	<% @pageid.images.each do |img| %>
+			<%= image_tag(img.image_url, :width => '180') %>
+		<%end%>
+		</div>
+		
+		<ul id="navigation">
+		<% @pagesec.visible.sorted.each do |pagesec| %>
+
+  			 <li><%= link_to(pagesec.name,"#"+pagesec.name)%></li>
+                 	<% end %>
+				</ul>
+</div>
+ <div class="content-wrapper">
+  <div class="font-size-wrapper">
+  <a href="javascript:decreaseFontSize();" class="font-size-link">-</a> &nbsp;&nbsp; Text Size &nbsp;&nbsp;
+		<a href="javascript:increaseFontSize();" class="font-size-link">+</a>
+		</div>
+<ul><br/>
+		<% @pagesec.visible.sorted.each do |pagesec| %>
+			<% if pagesec.id == 1 %>
+			
+			<div id="<%= pagesec.name%>" style="margin-top:300px;margin-bottom:300px;">
+                          <li><%= raw(pagesec.content) %></li>
+			
+			<% else %>
+			
+			<div class="page mtop100" id="<%= pagesec.name%>" style="margin-top:300px;margin-bottom:300px;">
+                          <li><%= raw(pagesec.content) %></li>
+      
+        <% end %>
+
+ 			</div>
+ <div style="clear:both"></div>
+  <div class="division"></div>
+		<% end %>
+		
+	</ul><br/><br/>
+</div>
+</div>

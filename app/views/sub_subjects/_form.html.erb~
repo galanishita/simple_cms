@@ -1,0 +1,106 @@
+<%= error_messages_for(@subsubjects) %>
+
+
+<table width="100%" border="0" cellspacing="0" cellpadding="0" style="font-family:Kalinga, Arial, Helvetica, sans-serif; font-size:16px;">
+    	<tr>
+    <td width="30%" align="right">&nbsp;</td>
+    <td width="4%">&nbsp;</td>
+    <td width="66%" align="left">&nbsp;</td>
+    </tr>
+
+    <tr>
+    <td width="32%" align="right"><%= f.label(:topic_id, "Topic") %></td>
+    <td width="2%">&nbsp;</td>
+    <td width="66%" align="left">
+    <%= f.select(:topic_id, @topics.collect {|t| [t.topic_name, t.id]}, {}, { :class => 'innerpages-text-dropdown' } ) %>
+    <%= link_to 'Add New', {:controller => 'topics', :action => 'new'} %></td>
+    </tr>
+    <tr>
+    <td height="7"></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td align="right"><%= f.label(:author_id, "Author") %></td>
+    <td>&nbsp;</td>
+    <td align="left">
+    <%= f.select(:author_id, @authors.collect {|a| [a.author_name, a.id]}, {}, { :class => 'innerpages-text-dropdown' }) %>
+    <%= link_to 'Add New', {:controller => 'authors', :action => 'new'} %>
+    </td>
+    </tr>
+
+    <tr>
+    <td height="7"></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td align="right"><%= f.label(:language, "Language") %></td>
+    <td>&nbsp;</td>
+    <td align="left">
+    <%= f.radio_button(:language, "english", :checked => true) %>
+    <%= f.label(:langauge_eng, "English") %>
+    <%= f.radio_button(:language, "hindi") %><%= f.label(:langauge_hin, "Hindi") %>
+    </td>
+    </tr>
+    
+    <tr>
+    <td height="7"></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td align="right"><%= f.label(:title) %></td>
+    <td>&nbsp;</td>
+    <td align="left">
+    <%= f.text_area :title, :size => "60x12", :class => 'innerpages-text-area' %>
+    </td>
+    </tr>
+    <tr>
+    <td height="7"></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td align="right"><%= f.label(:quote) %></td>
+    <td>&nbsp;</td>
+    <td align="left">
+    <%= f.text_area :quote, :size => "60x12", :class => 'innerpages-text-area' %>
+    </td>
+    </tr>
+    
+    <tr>
+    <td height="7"></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td align="right"><%= f.label(:info) %></td>
+    <td>&nbsp;</td>
+    <td align="left">
+    <%= f.text_field :info, :class => 'innerpages-text-input' %>
+    </td>
+    </tr>
+    
+    <tr>
+    <td height="7"></td>
+    <td></td>
+    <td></td>
+    </tr>
+
+    <tr>
+    <td align="right"><%= f.label :published_at %></td>
+    <td>&nbsp;</td>
+    <td align="left">
+    <%= f.text_field :publish_at_date, :class => 'datepicker', :size => 10, :maxlength => 10, :class => 'innerpages-text-input' %>
+    <%= f.text_field :publish_at_time, :size => 5, :maxlength => 5, :class => 'innerpages-text-input' %>
+    </td>
+    </tr>
+
+    </table>
+

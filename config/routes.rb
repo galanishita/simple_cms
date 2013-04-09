@@ -1,10 +1,15 @@
 SimpleCms::Application.routes.draw do
 
  root :to => "public#index"
-  
+ 
   match 'admin', :to => 'access#menu'
   match 'show/:id', :to => 'public#show'
-  
+match 'images/addimgtosubsubject', :to => 'images#addimgtosubsubject'
+ resources :images
+  resources :quoteimages
+ resources :authors
+ resources :topics
+resources :quotes
   #get "demo/index"
   #get "demo/hello"
   get "sections/list"

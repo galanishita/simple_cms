@@ -1,0 +1,5 @@
+class SlideshowController < ApplicationController
+def slideshow
+  @Quote = Quote.all
+end
+end

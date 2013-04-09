@@ -1,0 +1,29 @@
+<% @page_title = "Authors List" %>
+
+<%= link_to("<< Back to Menu", {:controller => 'access', :action => 'menu'}, :class => 'back-link') %>
+<center>
+<h3>Listing authors</h3>
+<br/><br/><br/><br/>
+<table class="listing" summary="Subject list">
+  <tr class="header">
+    <th>Author Name</th>
+    <th colspan="4">Actions</th>
+     </tr>
+
+<% @authors.each do |author| %>
+  <tr class="<%= cycle('odd', 'even') %>">
+   <td>
+	<%= author.author_name %>
+	</td>
+	<td><%= link_to("Add Image", {:controller => 'quoteimages', :action => 'new', :quoteimageable_id => author.id, :quoteimageable_type => 'author'}) %></td>
+     <td><%= link_to 'Show', author %></td>
+    <td><%= link_to 'Edit', edit_author_path(author) %></td>
+    <td><%= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+<br/><br/>
+<%= link_to 'New Author', new_author_path %><br/><br/>
+<%= will_paginate @quote %>
+    </center>
+
