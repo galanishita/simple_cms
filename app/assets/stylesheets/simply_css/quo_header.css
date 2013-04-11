@@ -364,5 +364,5 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dc2028', end
 
 .quotation-band-bg{width:auto; margin-top:100px; float:left; z-index:2; position:absolute;}
 .quotation-band-title{width:160px; background:#303030; float:left; font-family:century-gothic, Arial, Helvetica, sans-serif; font-size:25px; color:#F7F7F7; text-shadow: 2px 1px #000; font-weight:lighter; padding:10px 0 10px 100px;}
-.quotation-band-title2{width:auto; float:left;  font-family:century-gothic, Arial, Helvetica, sans-serif; font-size:25px; color:#000; text-shadow: 2px 1px #CCC; text-transform:uppercase; background:url(/assets/quotations/bg.png); font-weight:lighter; padding:10px 15px 10px 15px;}
+.quotation-band-title2{width:auto; float:left;  font-family:century-gothic, Arial, Helvetica, sans-serif; font-size:25px; color:#000; text-shadow: 2px 1px #CCC; text-transform:uppercase; background:url(quotations/bg.png); font-weight:lighter; padding:10px 15px 10px 15px;}
 .quotation-subtitle{height:150px; width:100%; float:left; margin-left:230px; margin-top:0px; position:relative; font-family:century-gothic, Arial, Helvetica, sans-serif; font-size:35px; background:#e0dede; z-index:1; margin-top:35px;}
