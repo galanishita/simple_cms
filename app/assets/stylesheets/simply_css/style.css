@@ -588,11 +588,11 @@ a.simplyK-id-match-button .text{border-left:1px solid rgba(255,255,255,0.15);dis
 @font-face{
  font-family: 'OnesimplyKGlyphs';
  font-weight:normal;font-style:normal
-  src: url('fonts/onesimplyK-glyphs-webfont.eot');
-    src: url('fonts/onesimplyK-glyphs-webfont.eot?') format('eot'),
-    		 url('fonts/onesimplyK-glyphs-webfont.woff') format('woff'),
-        	url('fonts/onesimplyK-glyphs-webfont.ttf') format('truetype'),
-        url('fonts/onesimplyK-glyphs-webfont.svg') format('svg')
+  src: url('/assets/simply_css/fonts/onesimplyK-glyphs-webfont.eot');
+    src: url('/assets/simply_css/fonts/onesimplyK-glyphs-webfont.eot?') format('eot'),
+    		 url('/assets/simply_css/fonts/onesimplyK-glyphs-webfont.woff') format('woff'),
+        	url('/assets/simply_css/fonts/onesimplyK-glyphs-webfont.ttf') format('truetype'),
+        url('/assets/simply_css/fonts/onesimplyK-glyphs-webfont.svg') format('svg')
 
 }
 .glyph,.glyph-replace,.glyph-before:before,.glyph-after:after{font-family:'OnesimplyKGlyphs'!important;-webkit-font-smoothing:antialiased;font-style:normal!important;line-height:1;text-decoration:none!important;text-transform:none!important;vertical-align:middle}
