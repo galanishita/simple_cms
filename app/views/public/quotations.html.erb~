@@ -197,7 +197,7 @@ body{background:url(/assets/quotations/center-highlight.png) center top #cccccc 
                    					<p class="quotation-text">
                     						<%= selquote.quote %>                    	
                     						<br /><br />
-                    	   				<span>-<%= selquote.author.author_name %><%= selquote.info %></span>
+                    	   				<span>-<%= selquote.author.author_name %> "<%= selquote.info %>"</span>
                     	   				
                         			</p>                       
                     				</div>     
