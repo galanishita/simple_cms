@@ -19,7 +19,7 @@ src:url('/assets/simply_css/fonts/Kalinga.otf');
 a {text-decoration:none; }
 ul {list-style:none;}
 h1, h2, h3, h4{font-family:Kalinga, Arial, Helvetica, sans-serif; color:#DC2028; font-weight:normal; }
-
+.main{background:url(/assets/simply_images/bg-noise.png);}
 p{font-family:Kalinga, Arial, Helvetica, sans-serif; font-size:14px; text-align:justify; line-height:20px; color:#333; }
 .p-hindi{font-family:Kalinga, Arial, Helvetica, sans-serif; font-size:15px; text-align:justify; line-height:25px; color:#333; }
 footer{width:100%; height:auto; border-bottom:6px solid #DC2028; position:absolute; background:#3b3b3b; z-index:10; float:left;}

@@ -106,7 +106,7 @@ p{font-family:Kalinga, Arial, Helvetica, sans-serif; font-size:13px; text-align:
 
 .main-wrapper{width:1000px; height:auto; margin-bottom:60px; margin-left:auto; margin-right:auto; position:relative; }
 .main-wrapper-inner{width:100%; height:auto; position:relative; padding:20px 20px 0 0; float:left; margin-left:230px;  }
-.main-wrapper-inner2{width:100%; height:auto; position:relative; padding:20px 20px 0 0; float:left; margin-left:230px; background:url(../images/bg-noise.png);}
+.main-wrapper-inner2{width:100%; height:auto; position:relative; padding:20px 20px 0 0; float:left; margin-left:230px; background:url(/assets/simply_images/bg-noise.png);}
 .welcome{width:700px; height:auto; float:left; position:relative; }
 .latest-update{width:250px; height:auto; float:right; position:relative;}
 .latest-quote{width:250px; height:134px; float:right; position:relative;}
