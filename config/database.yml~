@@ -16,7 +16,7 @@ development:
   pool: 5
   username: adminHjqzYa6
   password: gekB43Kq9L2K
-  socket: /opt/lampp/var/mysql/mysql.sock
+  host: mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -25,18 +25,18 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: simple_cms_test
+  database: simplecms
   pool: 5
-  username: root
-  password:
+  username: adminHjqzYa6
+  password: gekB43Kq9L2K
   socket: /var/run/mysqld/mysqld.sock
 
 production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: simple_cms_production
+  database: simplecms
   pool: 5
-  username: root
-  password:
+  username: adminHjqzYa6
+  password: gekB43Kq9L2K
   socket: /opt/lampp/var/mysql/mysql.sock
