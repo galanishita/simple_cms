@@ -16,7 +16,7 @@ development:
   pool: 5
   username: adminHjqzYa6
   password: gekB43Kq9L2K
-  host: mysql://$OPENSHIFT_MYSQL_DB_HOST:$OPENSHIFT_MYSQL_DB_PORT/
+  socket:  <%=ENV['OPENSHIFT_MYSQL_DB_SOCKET']%>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
@@ -29,7 +29,7 @@ test:
   pool: 5
   username: adminHjqzYa6
   password: gekB43Kq9L2K
-  socket: /var/run/mysqld/mysqld.sock
+  socket:  <%=ENV['OPENSHIFT_MYSQL_DB_SOCKET']%>
 
 production:
   adapter: mysql2
@@ -39,4 +39,4 @@ production:
   pool: 5
   username: adminHjqzYa6
   password: gekB43Kq9L2K
-  socket: /opt/lampp/var/mysql/mysql.sock
+  socket:  <%=ENV['OPENSHIFT_MYSQL_DB_SOCKET']%>
