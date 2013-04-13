@@ -12,5 +12,5 @@ class CreateAdminUsers < ActiveRecord::Migration
       t.timestamps
     end
   end
-add_index("admin_users", "username")	
+	
 end
